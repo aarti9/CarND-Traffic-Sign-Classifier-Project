@@ -63,12 +63,6 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 I did not convert to grayscale to avoid losing any information. But normalized the data converting to floating point 
 
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -131,7 +125,7 @@ If a well known architecture was chosen:
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
-I began with the LeNet architecture from the lab. In our lab, LeNet proved very effective at classifying black-and-white handwritten digits, so it was plausible to expect that it could identify street sign images, which are of similar overall complexity.
+I began with the LeNet architecture from the lab. LeNet proved very effective at classifying black-and-white handwritten digits, so it was plausible to expect that it could identify street sign images, which are of similar overall complexity.
 I first modified LeNet to accept an input of color depth 3 and yield an output of 43 classes instead of 10. As a "zero order optimization" I tried simply dialing up the number of training epochs to 40 to see where the validation accuracy would plateau (or potentially peak and decline due to overfitting). Unfortunately, I never observed validation set accuracy of greater than 94%, although the accuracy on the test set climbed to 99.9%ish. This led me to believe that the network was mildly overfitting.
 To combat overfitting, I implemented a dropout layer after each relu activation, by adding a tunable hyperparameter. 0.75 value gave good validation accuracy. 
 
@@ -142,8 +136,8 @@ To combat overfitting, I implemented a dropout layer after each relu activation,
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][bicyclecrossing.jpg] ![alt text][childrencrossing.jpg] ![alt text][nopassing.jpg] 
-![alt text][roadwork.jpg] 
+![alt text][bicyclecrossing] ![alt text][childrencrossing] ![alt text][nopassing] 
+![alt text][roadwork] 
 
 The first image might be difficult to classify because ...
 
